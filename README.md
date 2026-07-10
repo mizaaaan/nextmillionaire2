@@ -1,1 +1,2 @@
-# nextmillionaire2
+# nextmillionaireqr
+https://mizaaaan.github.io/nextmillionaireqr/
