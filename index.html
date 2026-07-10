@@ -100,6 +100,7 @@
     }
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 32px;
       font-size: 14px;
     }
@@ -816,6 +817,11 @@
       .values-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      /* Nav: collapse to hamburger earlier so the full link row never
+         overflows and overlaps the logo on tablets (e.g. iPad Air). */
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
     }
 
     /* ── Mobile (≤768px): single column, tighter spacing ── */
@@ -1191,23 +1197,61 @@
       ar: ["ابنِ", "أحلامك"]
     };
 
+    // Split text into the smallest units that are still safe to render
+    // separately. For Latin script, splitting per JS character (code point)
+    // is fine. Bengali and Arabic use combining marks / conjuncts and
+    // position-dependent letter shaping, so splitting per code point breaks
+    // the script's rendering (shows as broken glyphs / dotted circles).
+    // Intl.Segmenter (grapheme granularity) keeps each visual character —
+    // base letter plus its combining marks — together as one unit.
+    function splitForAnimation(line, lang) {
+      if (lang !== "en" && typeof Intl !== "undefined" && Intl.Segmenter) {
+        const seg = new Intl.Segmenter(lang, { granularity: "grapheme" });
+        return Array.from(seg.segment(line), (s) => s.segment);
+      }
+      return [...line];
+    }
+
     window.setHeroHeading = function (lang) {
       const lines = window.heroLines[lang] || window.heroLines.en;
       const charDelay = 30;
       const initialDelay = 200;
       heading.innerHTML = "";
 
+      // Bengali/Arabic conjuncts and letter joining can still be disturbed by
+      // wrapping each grapheme in its own inline-block span in some browsers,
+      // so for non-Latin scripts we animate whole words instead of
+      // individual characters — this preserves correct shaping everywhere.
+      const useWordAnimation = lang !== "en";
+
       lines.forEach((line, lineIndex) => {
         const lineSpan = document.createElement("span");
         lineSpan.style.display = "block";
-        [...line].forEach((char, charIndex) => {
-          const span = document.createElement("span");
-          span.className = "char";
-          span.innerHTML = char === " " ? "&nbsp;" : char;
-          const delay = initialDelay + lineIndex * line.length * charDelay + charIndex * charDelay;
-          span.style.transitionDelay = delay + "ms";
-          lineSpan.appendChild(span);
-        });
+
+        if (useWordAnimation) {
+          const words = line.split(" ");
+          words.forEach((word, wordIndex) => {
+            const span = document.createElement("span");
+            span.className = "char";
+            span.textContent = word;
+            span.style.display = "inline-block";
+            const delay = initialDelay + lineIndex * words.length * charDelay * 3 + wordIndex * charDelay * 3;
+            span.style.transitionDelay = delay + "ms";
+            lineSpan.appendChild(span);
+            if (wordIndex < words.length - 1) {
+              lineSpan.appendChild(document.createTextNode(" "));
+            }
+          });
+        } else {
+          splitForAnimation(line, lang).forEach((char, charIndex) => {
+            const span = document.createElement("span");
+            span.className = "char";
+            span.innerHTML = char === " " ? "&nbsp;" : char;
+            const delay = initialDelay + lineIndex * line.length * charDelay + charIndex * charDelay;
+            span.style.transitionDelay = delay + "ms";
+            lineSpan.appendChild(span);
+          });
+        }
         heading.appendChild(lineSpan);
       });
 
