@@ -1,22 +1,15 @@
-<!-- about.html -->
+<!-- fleet.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <script>(function(){try{var t=localStorage.getItem('nm-theme')||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Next Millionaire | About</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Next Millionaire | Fleet</title>
 
-  <!-- Favicons (same as original) -->
+  <!-- Favicons and fonts (same) -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Hind+Siliguri:wght@400;500;600;700&family=Markazi+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -292,11 +285,60 @@
     .content-section {
       padding: 80px 24px;
       background: #fff;
+    }
+    #values {
+      padding-top: 40px;
+    }
+    .content-section:nth-of-type(1) {
+      background: #54C2FE;
+      color: #fff;
+    }
+    .content-section:nth-of-type(2) {
+      background: #fff;
       color: #1a1a1a;
     }
+    .content-section:nth-of-type(3) {
+      background: #54C2FE;
+      color: #fff;
+    }
+    .content-section:nth-of-type(4) {
+      background: #fff;
+      color: #1a1a1a;
+    }
+    .content-section:nth-of-type(5) {
+      background: #fff;
+      color: #1a1a1a;
+    }
+    .content-section:nth-of-type(6) {
+      background: #54C2FE;
+      color: #fff;
+    }
+    .content-section:nth-of-type(n+2):nth-of-type(even) .section-label {
+      color: rgba(0, 0, 0, 0.6);
+    }
+    .content-section:nth-of-type(n+2):nth-of-type(even) .section-title {
+      color: #1a1a1a;
+    }
+    .content-section:nth-of-type(n+2):nth-of-type(even) .muted {
+      color: rgba(0, 0, 0, 0.65);
+    }
+    .content-section:nth-of-type(n+2):nth-of-type(odd) .section-label {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .content-section:nth-of-type(n+2):nth-of-type(odd) .section-title {
+      color: #fff;
+    }
+    .content-section:nth-of-type(n+2):nth-of-type(odd) .muted {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-head { margin-bottom: 48px; }
     .section-label {
       display: inline-block;
-      color: rgba(0, 0, 0, 0.6);
+      color: #666;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.05em;
@@ -311,18 +353,6 @@
       max-width: 600px;
       color: #1a1a1a;
     }
-    .muted {
-      color: rgba(0, 0, 0, 0.65);
-      line-height: 1.6;
-    }
-    #values {
-      padding-top: 40px;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .section-head { margin-bottom: 48px; }
 
     .about-grid {
       display: grid;
@@ -354,6 +384,10 @@
       color: #666;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+    }
+    .muted {
+      color: #666;
+      line-height: 1.6;
     }
 
     .team-grid {
@@ -433,6 +467,9 @@
       margin-top: 12px;
       word-break: break-word;
     }
+    .content-section:nth-of-type(n+2):nth-of-type(even) .member-contact {
+      color: rgba(255, 255, 255, 0.9);
+    }
     #management .member-contact {
       color: #54C2FE;
     }
@@ -449,11 +486,33 @@
       border: 1px solid #e0e0e0;
       transition: all 0.3s ease;
     }
+    .content-section:nth-of-type(3) .value-card,
+    .content-section:nth-of-type(3) .gallery-card,
+    .content-section:nth-of-type(4) .member-card {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
     .gallery-card:hover, .value-card:hover {
       background: #fff;
       border-color: #54C2FE;
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(84, 194, 254, 0.15);
+    }
+    .content-section:nth-of-type(3) .value-card:hover,
+    .content-section:nth-of-type(3) .gallery-card:hover,
+    .content-section:nth-of-type(4) .member-card:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+    .content-section:nth-of-type(n+2):nth-of-type(even) .gallery-card,
+    .content-section:nth-of-type(n+2):nth-of-type(even) .value-card {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .content-section:nth-of-type(n+2):nth-of-type(even) .gallery-card:hover,
+    .content-section:nth-of-type(n+2):nth-of-type(even) .value-card:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
     }
     .icon {
       font-size: 40px;
@@ -564,12 +623,20 @@
       border-radius: 12px;
       border: 1px solid #e0e0e0;
     }
+    .content-section:nth-of-type(n+2):nth-of-type(even) .contact-item {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
     .contact-label {
       font-size: 12px;
+      color: #666;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       margin-bottom: 8px;
       display: block;
+    }
+    .content-section:nth-of-type(n+2):nth-of-type(even) .contact-label {
+      color: rgba(255, 255, 255, 0.8);
     }
     .contact-value {
       font-size: 14px;
@@ -805,10 +872,26 @@
     html[data-theme="dark"] #contact .btn-primary:hover { background: transparent; color: #fff; border-color: #fff; }
 
 
+    html[data-theme="dark"] .content-section:nth-of-type(1),
+    html[data-theme="dark"] .content-section:nth-of-type(3),
+    html[data-theme="dark"] .content-section:nth-of-type(6) { background: #1a4f6e; color: #fff; }
+    html[data-theme="dark"] .content-section:nth-of-type(2),
+    html[data-theme="dark"] .content-section:nth-of-type(4),
+    html[data-theme="dark"] .content-section:nth-of-type(5) { background: #0d0f13; color: #e7e7e7; }
+    html[data-theme="dark"] .content-section:nth-of-type(n+2):nth-of-type(even) .section-label,
+    html[data-theme="dark"] .content-section:nth-of-type(5) .section-label { color: rgba(255, 255, 255, 0.55); }
+    html[data-theme="dark"] .content-section:nth-of-type(n+2):nth-of-type(even) .section-title,
+    html[data-theme="dark"] .content-section:nth-of-type(5) .section-title { color: #f5f5f5; }
+    html[data-theme="dark"] .content-section:nth-of-type(n+2):nth-of-type(even) .muted,
+    html[data-theme="dark"] .content-section:nth-of-type(5) .muted { color: rgba(255, 255, 255, 0.62); }
+    html[data-theme="dark"] .content-section:nth-of-type(5) .value-card { color: #f5f5f5; }
+    html[data-theme="dark"] .content-section:nth-of-type(5) .value-card .muted { color: rgba(255, 255, 255, 0.62); }
+    html[data-theme="dark"] .content-section:nth-of-type(5) .value-title { color: #f5f5f5; }
+    html[data-theme="dark"] .content-section:nth-of-type(n+2):nth-of-type(even) .member-contact { color: #7fd3ff; }
+
   </style>
 </head>
 <body>
-  <!-- Hero (keeps same visual) -->
   <section class="hero">
     <video class="bg-video" autoplay muted loop playsinline>
       <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4" type="video/mp4">
@@ -842,12 +925,12 @@
       <div class="hero-bottom">
         <div class="hero-grid">
           <div>
-            <div class="eyebrow" data-i18n="hero.eyebrow">Est. 2026 · Registered Co-operative</div>
-            <h1 data-i18n="hero.title">About Next Millionaire</h1>
-            <p class="subheading" data-i18n="hero.subtitle">Next Millionaire Co-operative was founded with a simple belief: when people work together with shared ownership and mutual accountability, extraordinary things happen.</p>
+            <div class="eyebrow" data-i18n="hero.eyebrow">Core Principles</div>
+            <h1 data-i18n="hero.title">Our Fleet</h1>
+            <p class="subheading" data-i18n="hero.subtitle">Trust, transparency, sustainability, and shared prosperity — the principles that guide every decision.</p>
             <div class="buttons" id="buttons">
-              <a href="team.html" class="btn-primary" data-i18n="hero.btn1">Meet Our Team</a>
-              <a href="about.html" class="btn-secondary liquid-glass" data-i18n="hero.btn2">Our Story</a>
+              <a href="about.html" class="btn-primary" data-i18n="hero.btn1">Our Story</a>
+              <a href="team.html" class="btn-secondary liquid-glass" data-i18n="hero.btn2">Meet the Team</a>
             </div>
           </div>
         </div>
@@ -855,36 +938,44 @@
     </div>
   </section>
 
-  <!-- About content (complete, same design and structure) -->
-  <section class="content-section" id="about">
-    <div class="container about-grid">
-      <div>
-        <div class="section-head">
-          <p class="section-label" data-i18n="about.label">About Next Millionaire</p>
-          <h2 class="section-title" data-i18n="about.title">A Co-operative Built on Shared Values</h2>
-        </div>
-        <p class="muted" data-i18n="about.para1">Next Millionaire Co-operative was founded with a simple belief: when people work together with shared ownership and mutual accountability, extraordinary things happen. We unite farmers, consumers, and entrepreneurs into a resilient economic community.</p>
-        <p class="muted" style="margin-top:14px;" data-i18n="about.para2">Our democratic structure ensures every member has a voice. Profits are reinvested into the community, creating lasting impact across generations.</p>
+  <section class="content-section" id="values">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-label" data-i18n="hero.title">Our Fleet</p>
+        <h2 class="section-title" data-i18n="values.title">Principles that Guide Us</h2>
+        <p class="muted" style="margin-top:14px;" data-i18n="values.subtitle">We prioritize fairness, sustainability, and long-term community impact in everything we do.</p>
       </div>
-      <div class="glass-card liquid-glass">
-        <div class="stats-grid">
-          <div class="stat"><div class="stat-num">50+</div><div class="stat-label" data-i18n="stat.members">Active Members</div></div>
-          <div class="stat"><div class="stat-num">1</div><div class="stat-label" data-i18n="stat.years">Years of Service</div></div>
-          <div class="stat"><div class="stat-num">৳10M</div><div class="stat-label" data-i18n="stat.turnover">Annual Turnover</div></div>
-          <div class="stat"><div class="stat-num">32</div><div class="stat-label" data-i18n="stat.villages">Villages Served</div></div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="icon">🤝</div>
+          <div class="value-title" data-i18n="v1.t">Shared Ownership</div>
+          <p class="muted" data-i18n="v1.d">Members co-own the cooperative and share in governance and benefits.</p>
         </div>
-        <p class="muted" style="margin-top:28px;" data-i18n="about.tagline1">🌱 Cultivating community wealth through democratic enterprise</p>
-        <p class="muted" style="margin-top:10px;" data-i18n="about.tagline2">98% Member Satisfaction</p>
+        <div class="value-card">
+          <div class="icon">🌱</div>
+          <div class="value-title" data-i18n="v2.t">Sustainability</div>
+          <p class="muted" data-i18n="v2.d">We promote environmentally responsible farming and long-term stewardship.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">📈</div>
+          <div class="value-title" data-i18n="v3.t">Economic Empowerment</div>
+          <p class="muted" data-i18n="v3.d">We create pathways for income growth and financial resilience for members.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🔍</div>
+          <div class="value-title" data-i18n="v4.t">Transparency</div>
+          <p class="muted" data-i18n="v4.d">Open books, clear reporting, and accountable governance.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer (same) -->
   <footer>
     <div class="footer-inner">
       <strong>Next Millionaire</strong>
       <div data-i18n="footer.tagline">Building community wealth through shared ownership.</div>
-      <div>© <span id="year"></span> Next Millionaire </div>
+      <div>© <span id="year"></span> Next Millionaire</div>
     </div>
   </footer>
 
@@ -892,59 +983,47 @@
     window.translations = {
       en: {
         "nav.about": "About", "nav.gallery": "Gallery", "nav.team": "Team", "nav.fleet": "Fleet", "nav.contact": "Contact",
-        "hero.eyebrow": "Est. 2026 · Registered Co-operative",
-        "hero.title": "About Next Millionaire",
-        "hero.subtitle": "Next Millionaire Co-operative was founded with a simple belief: when people work together with shared ownership and mutual accountability, extraordinary things happen.",
-        "hero.btn1": "Meet Our Team",
-        "hero.btn2": "Our Story",
-        "about.label": "About Next Millionaire",
-        "about.title": "A Co-operative Built on Shared Values",
-        "about.para1": "Next Millionaire Co-operative was founded with a simple belief: when people work together with shared ownership and mutual accountability, extraordinary things happen. We unite farmers, consumers, and entrepreneurs into a resilient economic community.",
-        "about.para2": "Our democratic structure ensures every member has a voice. Profits are reinvested into the community, creating lasting impact across generations.",
-        "stat.members": "Active Members",
-        "stat.years": "Years of Service",
-        "stat.turnover": "Annual Turnover",
-        "stat.villages": "Villages Served",
-        "about.tagline1": "🌱 Cultivating community wealth through democratic enterprise",
-        "about.tagline2": "98% Member Satisfaction",
+        "hero.eyebrow": "Core Principles",
+        "hero.title": "Our Fleet",
+        "hero.subtitle": "Trust, transparency, sustainability, and shared prosperity — the principles that guide every decision.",
+        "hero.btn1": "Our Story",
+        "hero.btn2": "Meet the Team",
+        "values.title": "Principles that Guide Us",
+        "values.subtitle": "We prioritize fairness, sustainability, and long-term community impact in everything we do.",
+        "v1.t": "Shared Ownership", "v1.d": "Members co-own the cooperative and share in governance and benefits.",
+        "v2.t": "Sustainability", "v2.d": "We promote environmentally responsible farming and long-term stewardship.",
+        "v3.t": "Economic Empowerment", "v3.d": "We create pathways for income growth and financial resilience for members.",
+        "v4.t": "Transparency", "v4.d": "Open books, clear reporting, and accountable governance.",
         "footer.tagline": "Building community wealth through shared ownership."
       },
       bn: {
         "nav.about": "আমাদের সম্পর্কে", "nav.gallery": "গ্যালারি", "nav.team": "টিম", "nav.fleet": "ফ্লিট", "nav.contact": "যোগাযোগ",
-        "hero.eyebrow": "প্রতিষ্ঠিত ২০২৬ · নিবন্ধিত সমবায় সমিতি",
-        "hero.title": "নেক্সট মিলিয়নিয়ার সম্পর্কে",
-        "hero.subtitle": "নেক্সট মিলিয়নিয়ার কো-অপারেটিভ একটি সহজ বিশ্বাস নিয়ে প্রতিষ্ঠিত হয়েছে: মানুষ যখন যৌথ মালিকানা ও পারস্পরিক জবাবদিহিতার মাধ্যমে একসাথে কাজ করে, তখন অসাধারণ কিছু ঘটে।",
-        "hero.btn1": "আমাদের টিমের সাথে পরিচিত হোন",
-        "hero.btn2": "আমাদের গল্প",
-        "about.label": "নেক্সট মিলিয়নিয়ার সম্পর্কে",
-        "about.title": "যৌথ মূল্যবোধের উপর গড়া একটি সমবায় সমিতি",
-        "about.para1": "নেক্সট মিলিয়নিয়ার কো-অপারেটিভ একটি সহজ বিশ্বাস নিয়ে প্রতিষ্ঠিত হয়েছে: মানুষ যখন যৌথ মালিকানা ও পারস্পরিক জবাবদিহিতার মাধ্যমে একসাথে কাজ করে, তখন অসাধারণ কিছু ঘটে। আমরা কৃষক, ভোক্তা এবং উদ্যোক্তাদের একত্রিত করে একটি টেকসই অর্থনৈতিক সম্প্রদায় গড়ে তুলি।",
-        "about.para2": "আমাদের গণতান্ত্রিক কাঠামো নিশ্চিত করে যে প্রতিটি সদস্যের মতামতের গুরুত্ব রয়েছে। মুনাফা সম্প্রদায়ে পুনর্বিনিয়োগ করা হয়, যা প্রজন্ম থেকে প্রজন্মে স্থায়ী প্রভাব তৈরি করে।",
-        "stat.members": "সক্রিয় সদস্য",
-        "stat.years": "সেবার বছর",
-        "stat.turnover": "বার্ষিক লেনদেন",
-        "stat.villages": "সেবাপ্রাপ্ত গ্রাম",
-        "about.tagline1": "🌱 গণতান্ত্রিক উদ্যোগের মাধ্যমে সমষ্টিগত সম্পদ গড়ে তোলা",
-        "about.tagline2": "৯৮% সদস্য সন্তুষ্টি",
+        "hero.eyebrow": "মূল নীতিমালা",
+        "hero.title": "আমাদের ফ্লিট",
+        "hero.subtitle": "বিশ্বাস, স্বচ্ছতা, টেকসইতা এবং যৌথ সমৃদ্ধি — এই নীতিগুলোই আমাদের প্রতিটি সিদ্ধান্তের পথ দেখায়।",
+        "hero.btn1": "আমাদের গল্প",
+        "hero.btn2": "টিমের সাথে পরিচিত হোন",
+        "values.title": "যেসব নীতি আমাদের পথ দেখায়",
+        "values.subtitle": "আমরা আমাদের প্রতিটি কাজে ন্যায্যতা, টেকসইতা এবং দীর্ঘমেয়াদী সামাজিক প্রভাবকে অগ্রাধিকার দিই।",
+        "v1.t": "যৌথ মালিকানা", "v1.d": "সদস্যরা সমবায়ের যৌথ মালিক এবং পরিচালনা ও সুবিধায় অংশীদার।",
+        "v2.t": "টেকসইতা", "v2.d": "আমরা পরিবেশবান্ধব কৃষি ও দীর্ঘমেয়াদী তত্ত্বাবধানকে উৎসাহিত করি।",
+        "v3.t": "অর্থনৈতিক ক্ষমতায়ন", "v3.d": "আমরা সদস্যদের জন্য আয় বৃদ্ধি ও আর্থিক স্থিতিস্থাপকতার পথ তৈরি করি।",
+        "v4.t": "স্বচ্ছতা", "v4.d": "উন্মুক্ত হিসাব, স্পষ্ট প্রতিবেদন এবং দায়বদ্ধ পরিচালনা।",
         "footer.tagline": "যৌথ মালিকানার মাধ্যমে সমষ্টিগত সম্পদ গড়ে তোলা।"
       },
       ar: {
         "nav.about": "من نحن", "nav.gallery": "معرض الصور", "nav.team": "الفريق", "nav.fleet": "الأسطول", "nav.contact": "تواصل معنا",
-        "hero.eyebrow": "تأسست 2026 · جمعية تعاونية مسجلة",
-        "hero.title": "عن نكست ميليونير",
-        "hero.subtitle": "تأسست جمعية نكست ميليونير التعاونية على إيمان بسيط: عندما يعمل الناس معًا بملكية مشتركة ومساءلة متبادلة، تحدث أمور استثنائية.",
-        "hero.btn1": "تعرف على فريقنا",
-        "hero.btn2": "قصتنا",
-        "about.label": "عن نكست ميليونير",
-        "about.title": "جمعية تعاونية مبنية على قيم مشتركة",
-        "about.para1": "تأسست جمعية نكست ميليونير التعاونية على إيمان بسيط: عندما يعمل الناس معًا بملكية مشتركة ومساءلة متبادلة، تحدث أمور استثنائية. نجمع المزارعين والمستهلكين ورواد الأعمال في مجتمع اقتصادي قوي ومترابط.",
-        "about.para2": "يضمن هيكلنا الديمقراطي أن يكون لكل عضو صوت مسموع. يُعاد استثمار الأرباح في المجتمع، مما يخلق أثرًا دائمًا عبر الأجيال.",
-        "stat.members": "الأعضاء النشطون",
-        "stat.years": "سنوات الخدمة",
-        "stat.turnover": "الإيرادات السنوية",
-        "stat.villages": "القرى التي نخدمها",
-        "about.tagline1": "🌱 نزرع ثروة المجتمع من خلال المشاريع الديمقراطية",
-        "about.tagline2": "98% رضا الأعضاء",
+        "hero.eyebrow": "المبادئ الأساسية",
+        "hero.title": "أسطولنا",
+        "hero.subtitle": "الثقة، الشفافية، الاستدامة، والازدهار المشترك — المبادئ التي توجه كل قرار نتخذه.",
+        "hero.btn1": "قصتنا",
+        "hero.btn2": "تعرف على الفريق",
+        "values.title": "المبادئ التي توجهنا",
+        "values.subtitle": "نولي الأولوية للعدالة والاستدامة والأثر المجتمعي طويل الأمد في كل ما نقوم به.",
+        "v1.t": "الملكية المشتركة", "v1.d": "يشترك الأعضاء في ملكية الجمعية ويشاركون في الحوكمة والمنافع.",
+        "v2.t": "الاستدامة", "v2.d": "نشجع الزراعة المسؤولة بيئيًا والإشراف طويل الأمد على الموارد.",
+        "v3.t": "التمكين الاقتصادي", "v3.d": "نخلق فرصًا لنمو الدخل والمرونة المالية لأعضائنا.",
+        "v4.t": "الشفافية", "v4.d": "سجلات مفتوحة، وتقارير واضحة، وحوكمة خاضعة للمساءلة.",
         "footer.tagline": "نبني ثروة المجتمع من خلال الملكية المشتركة."
       }
     };
@@ -953,7 +1032,6 @@
   <script src="js/i18n.js"></script>
 
   <script>
-    // small script to set year and mobile menu toggle (copied from original behavior)
     document.getElementById('year').textContent = new Date().getFullYear();
     const hb = document.getElementById('hamburgerBtn');
     const mm = document.getElementById('mobileMenu');
