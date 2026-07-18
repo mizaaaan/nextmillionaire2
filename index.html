@@ -344,6 +344,44 @@
       margin: 0 auto;
     }
     .section-head { margin-bottom: 48px; }
+    .section-head-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .section-head-row .section-head { margin-bottom: 0; flex: 1 1 320px; }
+    .section-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: inherit;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: gap 0.2s ease, opacity 0.2s ease;
+    }
+    .section-link:hover { gap: 10px; opacity: 0.8; }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: inherit;
+      text-decoration: none;
+      transition: gap 0.2s ease, opacity 0.2s ease;
+    }
+    .card-link:hover { gap: 10px; opacity: 0.8; }
+    .section-link .arrow,
+    .card-link .arrow { transition: transform 0.2s ease; }
+    .section-link:hover .arrow,
+    .card-link:hover .arrow { transform: translateX(3px); }
     .section-label {
       display: inline-block;
       color: #666;
@@ -927,6 +965,7 @@
       /* Sections */
       .content-section { padding: 60px 16px; }
       .section-head { margin-bottom: 32px; }
+      .section-head-row { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 32px; }
 
       /* About */
       .about-grid { grid-template-columns: 1fr; gap: 56px; }
@@ -1058,6 +1097,10 @@
     html[dir="rtl"] .gallery-card,
     html[dir="rtl"] .member-card,
     html[dir="rtl"] .contact-item { text-align: right; }
+    html[dir="rtl"] .section-link .arrow,
+    html[dir="rtl"] .card-link .arrow { display: inline-block; transform: scaleX(-1); }
+    html[dir="rtl"] .section-link:hover .arrow,
+    html[dir="rtl"] .card-link:hover .arrow { transform: scaleX(-1) translateX(3px); }
     html[dir="rtl"] .fleet-info { flex-direction: row-reverse; }
     html[dir="rtl"] .about-heading,
     html[dir="rtl"] .about-copy .muted,
@@ -1269,18 +1312,21 @@
   
   <section class="content-section" id="gallery">
     <div class="container">
-      <div class="section-head">
-        <p class="section-label" data-i18n="gallery.label">Our Work in Action</p>
-        <h2 class="section-title" data-i18n="gallery.title">Programs & Impact Gallery</h2>
-        <p class="muted" style="margin-top:14px;" data-i18n="gallery.subtitle">See how our initiatives are transforming lives and communities across the region.</p>
+      <div class="section-head-row">
+        <div class="section-head">
+          <p class="section-label" data-i18n="gallery.label">Our Work in Action</p>
+          <h2 class="section-title" data-i18n="gallery.title">Programs & Impact Gallery</h2>
+          <p class="muted" style="margin-top:14px;" data-i18n="gallery.subtitle">See how our initiatives are transforming lives and communities across the region.</p>
+        </div>
+        <a href="gallery.html" class="section-link" data-i18n="gallery.viewAll">View Full Gallery <span class="arrow">⟶</span></a>
       </div>
       <div class="gallery-grid">
-        <div class="gallery-card"><div class="icon">🌾</div><div class="gallery-title" data-i18n="g1.t">Agricultural Training</div><p class="muted" data-i18n="g1.d">Member education on sustainable farming techniques and modern crop management practices.</p></div>
-        <div class="gallery-card"><div class="icon">💼</div><div class="gallery-title" data-i18n="g2.t">Business Skills</div><p class="muted" data-i18n="g2.d">Financial literacy, market access, and entrepreneurship workshops for cooperative members.</p></div>
-        <div class="gallery-card"><div class="icon">👨‍👩‍👧‍👦</div><div class="gallery-title" data-i18n="g3.t">Community Outreach</div><p class="muted" data-i18n="g3.d">Engaging with rural communities to build sustainable development and social networks.</p></div>
-        <div class="gallery-card"><div class="icon">📊</div><div class="gallery-title" data-i18n="g4.t">Financial Planning</div><p class="muted" data-i18n="g4.d">Member-focused financial services and microfinance initiatives for growth and stability.</p></div>
-        <div class="gallery-card"><div class="icon">🌿</div><div class="gallery-title" data-i18n="g5.t">Sustainability Initiatives</div><p class="muted" data-i18n="g5.d">Environmental conservation programs and organic farming promotion across member farms.</p></div>
-        <div class="gallery-card"><div class="icon">🏆</div><div class="gallery-title" data-i18n="g6.t">Member Success Stories</div><p class="muted" data-i18n="g6.d">Celebrating the achievements and milestones reached by our dedicated cooperative members.</p></div>
+        <div class="gallery-card"><div class="icon">🌾</div><div class="gallery-title" data-i18n="g1.t">Agricultural Training</div><p class="muted" data-i18n="g1.d">Member education on sustainable farming techniques and modern crop management practices.</p><a href="gallery.html" class="card-link" data-i18n="gallery.learnMore">Learn More <span class="arrow">⟶</span></a></div>
+        <div class="gallery-card"><div class="icon">💼</div><div class="gallery-title" data-i18n="g2.t">Business Skills</div><p class="muted" data-i18n="g2.d">Financial literacy, market access, and entrepreneurship workshops for cooperative members.</p><a href="gallery.html" class="card-link" data-i18n="gallery.learnMore">Learn More <span class="arrow">⟶</span></a></div>
+        <div class="gallery-card"><div class="icon">👨‍👩‍👧‍👦</div><div class="gallery-title" data-i18n="g3.t">Community Outreach</div><p class="muted" data-i18n="g3.d">Engaging with rural communities to build sustainable development and social networks.</p><a href="gallery.html" class="card-link" data-i18n="gallery.learnMore">Learn More <span class="arrow">⟶</span></a></div>
+        <div class="gallery-card"><div class="icon">📊</div><div class="gallery-title" data-i18n="g4.t">Financial Planning</div><p class="muted" data-i18n="g4.d">Member-focused financial services and microfinance initiatives for growth and stability.</p><a href="gallery.html" class="card-link" data-i18n="gallery.learnMore">Learn More <span class="arrow">⟶</span></a></div>
+        <div class="gallery-card"><div class="icon">🌿</div><div class="gallery-title" data-i18n="g5.t">Sustainability Initiatives</div><p class="muted" data-i18n="g5.d">Environmental conservation programs and organic farming promotion across member farms.</p><a href="gallery.html" class="card-link" data-i18n="gallery.learnMore">Learn More <span class="arrow">⟶</span></a></div>
+        <div class="gallery-card"><div class="icon">🏆</div><div class="gallery-title" data-i18n="g6.t">Member Success Stories</div><p class="muted" data-i18n="g6.d">Celebrating the achievements and milestones reached by our dedicated cooperative members.</p><a href="gallery.html" class="card-link" data-i18n="gallery.learnMore">Learn More <span class="arrow">⟶</span></a></div>
       </div>
     </div>
   </section>
@@ -1546,6 +1592,8 @@
         "about.cta": "Read Our Story",
         "gallery.label": "Our Work in Action",
         "gallery.title": "Programs &amp; Impact Gallery",
+        "gallery.viewAll": "View Full Gallery <span class=\"arrow\">⟶</span>",
+        "gallery.learnMore": "Learn More <span class=\"arrow\">⟶</span>",
         "gallery.subtitle": "See how our initiatives are transforming lives and communities across the region.",
         "g1.t": "Agricultural Training", "g1.d": "Member education on sustainable farming techniques and modern crop management practices.",
         "g2.t": "Business Skills", "g2.d": "Financial literacy, market access, and entrepreneurship workshops for cooperative members.",
@@ -1605,6 +1653,8 @@
         "about.cta": "আমাদের গল্প পড়ুন",
         "gallery.label": "আমাদের কর্মকাণ্ড",
         "gallery.title": "কর্মসূচি ও প্রভাবের গ্যালারি",
+        "gallery.viewAll": "সম্পূর্ণ গ্যালারি দেখুন <span class=\"arrow\">⟶</span>",
+        "gallery.learnMore": "আরও জানুন <span class=\"arrow\">⟶</span>",
         "gallery.subtitle": "দেখুন কীভাবে আমাদের উদ্যোগ পুরো অঞ্চল জুড়ে মানুষের জীবন ও সম্প্রদায়কে বদলে দিচ্ছে।",
         "g1.t": "কৃষি প্রশিক্ষণ", "g1.d": "টেকসই কৃষি কৌশল ও আধুনিক ফসল ব্যবস্থাপনা বিষয়ে সদস্যদের প্রশিক্ষণ।",
         "g2.t": "ব্যবসায়িক দক্ষতা", "g2.d": "সমবায় সদস্যদের জন্য আর্থিক সাক্ষরতা, বাজার সংযোগ এবং উদ্যোক্তা কর্মশালা।",
@@ -1664,6 +1714,8 @@
         "about.cta": "اقرأ قصتنا",
         "gallery.label": "أعمالنا في الميدان",
         "gallery.title": "معرض البرامج والأثر",
+        "gallery.viewAll": "عرض المعرض الكامل <span class=\"arrow\">⟶</span>",
+        "gallery.learnMore": "اعرف المزيد <span class=\"arrow\">⟶</span>",
         "gallery.subtitle": "شاهد كيف تُحدث مبادراتنا تحولًا في حياة الناس والمجتمعات في جميع أنحاء المنطقة.",
         "g1.t": "التدريب الزراعي", "g1.d": "تدريب الأعضاء على تقنيات الزراعة المستدامة وأساليب إدارة المحاصيل الحديثة.",
         "g2.t": "المهارات التجارية", "g2.d": "ورش عمل حول المعرفة المالية والوصول إلى الأسواق وريادة الأعمال لأعضاء الجمعية.",
